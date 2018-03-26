@@ -6,6 +6,7 @@ import io.ktor.routing.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import kotlinx.html.*
+import views.templates.ComponentLayout
 import views.templates.SectionLayout
 
 fun main(args: Array<String>) {
@@ -22,8 +23,8 @@ fun main(args: Array<String>) {
                     }
                 }
             }
-            get("/demo") {
-                call.respondText("HELLO WORLD!")
+            get("/components-and-slots") {
+                call.respondHtmlTemplate(ComponentLayout()) {}
             }
         }
     }
