@@ -7,6 +7,7 @@ import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import kotlinx.html.*
 import views.templates.ComponentLayout
+import views.templates.MainViewLayout
 import views.templates.SectionLayout
 
 fun main(args: Array<String>) {
@@ -25,6 +26,9 @@ fun main(args: Array<String>) {
             }
             get("/components-and-slots") {
                 call.respondHtmlTemplate(ComponentLayout()) {}
+            }
+            get("/sub_views") {
+                call.respondHtmlTemplate(MainViewLayout()) {}
             }
         }
     }
